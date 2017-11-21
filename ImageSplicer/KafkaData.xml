@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <Settings>
+    <Category>PartitionId01</Category>
+    <SettingKey>Offset</SettingKey>
+    <SettingsValue>0</SettingsValue>
+  </Settings>
+  <Settings>
+    <Category>PartitionId02</Category>
+    <SettingKey>Offset</SettingKey>
+    <SettingsValue>0</SettingsValue>
+  </Settings>
+</DocumentElement>
