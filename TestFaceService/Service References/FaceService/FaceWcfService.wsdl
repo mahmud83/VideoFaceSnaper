@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FaceWcfService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IFaceWcfService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://40.125.202.105:8008/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://40.125.202.105:8008/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://40.125.202.105:8008/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://40.125.202.105:8008/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+      <xsd:import schemaLocation="http://40.125.202.105:8008/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FaceSDKService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFaceWcfService_GetFeature_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeature" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetFeature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetAvatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvatar" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetAvatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetRect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRect" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetRect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetCompareByFace_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompareByFace" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetCompareByFace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompareByFaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetCompareByFaceSmall_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompareByFaceSmall" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetCompareByFaceSmall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompareByFaceSmallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetCompareByKafka_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompareByKafka" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetCompareByKafka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompareByKafkaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetCompareByFeature_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompareByFeature" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_GetCompareByFeature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompareByFeatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_WritePdb_InputMessage">
+    <wsdl:part name="parameters" element="tns:WritePdb" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_WritePdb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WritePdbResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_WritePdbID_InputMessage">
+    <wsdl:part name="parameters" element="tns:WritePdbID" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_WritePdbID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WritePdbIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_WriteTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteTest" />
+  </wsdl:message>
+  <wsdl:message name="IFaceWcfService_WriteTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteTestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFaceWcfService">
+    <wsdl:operation name="GetFeature">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaceWcfService/GetFeature" message="tns:IFaceWcfService_GetFeature_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaceWcfService/GetFeatureResponse" message="tns:IFaceWcfService_GetFeature_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaceWcfService/GetAvatar" message="tns:IFaceWcfService_GetAvatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaceWcfService/GetAvatarResponse" message="tns:IFaceWcfService_GetAvatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaceWcfService/GetRect" message="tns:IFaceWcfService_GetRect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaceWcfService/GetRectResponse" message="tns:IFaceWcfService_GetRect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompareByFace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaceWcfService/GetCompareByFace" message="tns:IFaceWcfService_GetCompareByFace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaceWcfService/GetCompareByFaceResponse" message="tns:IFaceWcfService_GetCompareByFace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompareByFaceSmall">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaceWcfService/GetCompareByFaceSmall" message="tns:IFaceWcfService_GetCompareByFaceSmall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaceWcfService/GetCompareByFaceSmallResponse" message="tns:IFaceWcfService_GetCompareByFaceSmall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompareByKafka">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaceWcfService/GetCompareByKafka" message="tns:IFaceWcfService_GetCompareByKafka_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaceWcfService/GetCompareByKafkaResponse" message="tns:IFaceWcfService_GetCompareByKafka_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompareByFeature">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaceWcfService/GetCompareByFeature" message="tns:IFaceWcfService_GetCompareByFeature_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaceWcfService/GetCompareByFeatureResponse" message="tns:IFaceWcfService_GetCompareByFeature_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WritePdb">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaceWcfService/WritePdb" message="tns:IFaceWcfService_WritePdb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaceWcfService/WritePdbResponse" message="tns:IFaceWcfService_WritePdb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WritePdbID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaceWcfService/WritePdbID" message="tns:IFaceWcfService_WritePdbID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaceWcfService/WritePdbIDResponse" message="tns:IFaceWcfService_WritePdbID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFaceWcfService/WriteTest" message="tns:IFaceWcfService_WriteTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFaceWcfService/WriteTestResponse" message="tns:IFaceWcfService_WriteTest_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IFaceWcfService" type="tns:IFaceWcfService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IFaceWcfService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFeature">
+      <soap12:operation soapAction="http://tempuri.org/IFaceWcfService/GetFeature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvatar">
+      <soap12:operation soapAction="http://tempuri.org/IFaceWcfService/GetAvatar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRect">
+      <soap12:operation soapAction="http://tempuri.org/IFaceWcfService/GetRect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompareByFace">
+      <soap12:operation soapAction="http://tempuri.org/IFaceWcfService/GetCompareByFace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompareByFaceSmall">
+      <soap12:operation soapAction="http://tempuri.org/IFaceWcfService/GetCompareByFaceSmall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompareByKafka">
+      <soap12:operation soapAction="http://tempuri.org/IFaceWcfService/GetCompareByKafka" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompareByFeature">
+      <soap12:operation soapAction="http://tempuri.org/IFaceWcfService/GetCompareByFeature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WritePdb">
+      <soap12:operation soapAction="http://tempuri.org/IFaceWcfService/WritePdb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WritePdbID">
+      <soap12:operation soapAction="http://tempuri.org/IFaceWcfService/WritePdbID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteTest">
+      <soap12:operation soapAction="http://tempuri.org/IFaceWcfService/WriteTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FaceWcfService">
+    <wsdl:port name="WSHttpBinding_IFaceWcfService" binding="tns:WSHttpBinding_IFaceWcfService">
+      <soap12:address location="http://40.125.202.105:8008/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://40.125.202.105:8008/</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

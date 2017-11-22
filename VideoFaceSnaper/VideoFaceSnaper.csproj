@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8A4DE5C-BE26-445F-BEBD-8C99C80857E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VideoFaceSnaper</RootNamespace>
+    <AssemblyName>VideoFaceSnaper</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\output\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>facesnap.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="C5">
+      <HintPath>..\lib\C5.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>..\lib\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>..\lib\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="kafka-net">
+      <HintPath>..\lib\kafka-net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Manina.Windows.Forms">
+      <HintPath>..\lib\Manina.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\lib\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\lib\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\lib\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nVlc.Declarations">
+      <HintPath>..\lib\nVlc.Declarations.dll</HintPath>
+    </Reference>
+    <Reference Include="nVlc.Implementation">
+      <HintPath>..\lib\nVlc.Implementation.dll</HintPath>
+    </Reference>
+    <Reference Include="nVlc.LibVlcWrapper">
+      <HintPath>..\lib\nVlc.LibVlcWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\lib\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Control\PictureDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\PictureDisplay.Designer.cs">
+      <DependentUpon>PictureDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UcSnapImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UcSnapImage.Designer.cs">
+      <DependentUpon>UcSnapImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FaceImg4kafka.cs" />
+    <Compile Include="DetectFace.cs" />
+    <Compile Include="Control\PersonManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\PersonManager.Designer.cs">
+      <DependentUpon>PersonManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HikFilePlayer.cs" />
+    <Compile Include="HikFileWatcher.cs" />
+    <Compile Include="ImgkafkaActor.cs" />
+    <Compile Include="Model\FaceDetectInfo.cs" />
+    <Compile Include="Model\FileFaceImage.cs" />
+    <Compile Include="Model\SearcPersonDetail.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Control\PersonDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\PersonDetail.Designer.cs">
+      <DependentUpon>PersonDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UcImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UcImage.Designer.cs">
+      <DependentUpon>UcImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultFileQueue.cs" />
+    <Compile Include="ResultImgQueue.cs" />
+    <Compile Include="VideoFaceProxy.cs" />
+    <Compile Include="VideoAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VideoAlert.Designer.cs">
+      <DependentUpon>VideoAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VideoImgSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VideoImgSearch.Designer.cs">
+      <DependentUpon>VideoImgSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VideoSurveilance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VideoSurveilance.Designer.cs">
+      <DependentUpon>VideoSurveilance.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MsFaceSDK\MsFaceSDK.csproj">
+      <Project>{0ac2e02f-3043-42a8-b8ef-460e48c0274b}</Project>
+      <Name>MsFaceSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoFace.Common\VideoFace.Common.csproj">
+      <Project>{8ffe8ca8-1175-4920-9dc0-d73cd1041b60}</Project>
+      <Name>VideoFace.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoFace.CoreNetApi\VideoFace.CoreNetApi.csproj">
+      <Project>{3f6df6ca-cbfa-4a06-ae10-16744c5d4926}</Project>
+      <Name>VideoFace.CoreNetApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\FaceImg4kafka.json" />
+    <None Include="FACEDATA\Readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Control\PersonDetail.resx">
+      <DependentUpon>PersonDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\PersonManager.resx">
+      <DependentUpon>PersonManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UcSnapImage.resx">
+      <DependentUpon>UcSnapImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UcImage.resx">
+      <DependentUpon>UcImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoAlert.resx">
+      <DependentUpon>VideoAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoImgSearch.resx">
+      <DependentUpon>VideoImgSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoSurveilance.resx">
+      <DependentUpon>VideoSurveilance.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Beep.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Clear2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CameraList.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="facesnap.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

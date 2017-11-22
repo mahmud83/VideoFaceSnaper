@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://40.125.202.105:8008/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://40.125.202.105:8008/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:import schemaLocation="http://40.125.202.105:8008/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FaceSDKService" />
+  <xs:element name="GetFeature">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imgbyte" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFeatureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFeatureResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvatar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imgbyte" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvatarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAvatarResult" nillable="true" type="q1:ArrayOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imgbyte" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="GetRectResult" nillable="true" type="q2:ArrayOfRectangle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompareByFace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imgbyte" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompareByFaceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FaceSDKService" minOccurs="0" name="GetCompareByFaceResult" nillable="true" type="q3:ArrayOfCompareFaces" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompareByFaceSmall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imgbyte" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompareByFaceSmallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FaceSDKService" minOccurs="0" name="GetCompareByFaceSmallResult" nillable="true" type="q4:ArrayOfCompareFaces" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompareByKafka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imgUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompareByKafkaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FaceSDKService" minOccurs="0" name="GetCompareByKafkaResult" nillable="true" type="q5:FaceKafka" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompareByFeature">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imgbyte" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompareByFeatureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FaceSDKService" minOccurs="0" name="GetCompareByFeatureResult" nillable="true" type="q6:ArrayOfCompareFaces" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WritePdb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imgbyte" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WritePdbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WritePdbResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WritePdbID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imgbyte" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="idCard" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WritePdbIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WritePdbIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="test" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteTestResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

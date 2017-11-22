@@ -1,27 +1,31 @@
-@echo off 
+@echo off
+set nowPath=%cd%
+cd \
+cd %nowPath%
 
-SET Pash=%cd%
+::delete specify file(*.pdb,*.suo,*.user,*.vshost.*)
+for /r %nowPath% %%i in (*.pdb,*.suo,*.user,*.vshost.*) do (del %%i)
 
-rem 删除当前目录下所有obj，bin目录
-for /f "tokens=*" %%a in ('dir obj /b /ad /s ^|sort') do rd "%%a" /s/q
-for /f "tokens=*" %%a in ('dir bin /b /ad /s ^|sort') do rd "%%a" /s/q
+echo 清理工程临时文件完成
 
 del /s /ah /f *.suo
 del /s /f *.user
 del /s /f *.cache
+del /s /f *.keep
+del /s /ah StyleCop.Cache
+del /s /ah .hgignore
 del /s /f *.scc
 del /s /f *.vssscc
 del /s /f *.vspscc
-del /s /f *.keep
 del /s /ah /f vssver2.scc
-del /s /ah StyleCop.Cache
-del /s /ah .hgignore
 
-del %Pash%\output\*.* /s/q
+::delete specify folder(obj,bin)
+cd %nowPath%
+for /r %nowPath% %%i in (obj,bin) do (IF EXIST %%i RD /s /q %%i)
 
-del %Pash%\Build\Release\*.* /s/q
-del %Pash%\Build\Debug\*.* /s/q
+echo 清理obj,bin文件夹完成
 
-echo 清理完成！
+del %nowPath%\output\*.* /s/q
 
+echo OK
 pause

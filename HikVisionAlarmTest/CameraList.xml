@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCameraInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CameraInfo Name="TEST1">
+    <CameraIp>192.168.1.248</CameraIp>
+    <Port>8000</Port>
+    <User>admin</User>
+    <Password>123456</Password>
+  </CameraInfo>
+  <CameraInfo Name="TEST2">
+    <CameraIp>192.168.1.249</CameraIp>
+    <Port>8000</Port>
+    <User>admin</User>
+    <Password>123456</Password>
+  </CameraInfo>
+</ArrayOfCameraInfo>
